@@ -1,23 +1,13 @@
-import express, { urlencoded } from "express";
-import cors from "cors";
+import express from "express";
 import cookieParser from "cookie-parser";
+import cors from "cors"
+import jwt from "jsonwebtoken"
 const app = express();
-
 //middlewares
 app.use(express.json());
-app.use(cookieParser());
-app.use(urlencoded({ extended: true }));
-
-const corsOptions = {
-    origin: 'http://localhost:5173',
-    Credential: true
-}
-app.use(corsOptions)
 
 
-const PORT = 8080;
-
-
+const PORT = 8000
 app.listen(PORT, () => {
-    console.log(`server started on port ${PORT}`);
+    console.log(`server is started at port ${PORT}`)
 })
